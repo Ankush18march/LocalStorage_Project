@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="main">
+        <div class="container">
+            <h1>LOGIN</h1><br>
+            <H4>Please enter your credentials to login.
+            </H4><br><br>
+            <input type="text" placeholder="username" id="name" ><br><br>  
+            <input type="password"placeholder="password" id="password" ><br>
+            <button onclick="login()"id="btn" >LOGIN</button><br>
+            <h5 id="p" >Not registered &nbsp;
+                <a href="signup.html" id="w" > Create an account</a> </h5>
+                <h5 id="p" >reset password? &nbsp;
+                    <a href="reset.html" id="w" > Reset Password</a> </h5>
+       </div>
+    </div>
+</body>
+<Script>
+function login(){
+    let  name = document.getElementById("name").value
+    let  password = document.getElementById("password").value
+    // let  cpassword = document.getElementById("cpassword").value
+// console.log(name,password,cpassword)
+
+let name1=localStorage.getItem("name",name)
+let password1=localStorage.getItem("password",password)
+// let cpassword1=localStorage.getItem("cpassword",cpassword)
+
+if(name1==name&&password==password1){
+    location.href="home.html";
+    alert("sucesfully login")
+}else{
+    alert("Invalid creditions")
+    alert("please first registerd youself")
+    let  name = document.getElementById("name").value=""
+    let  password = document.getElementById("password").value=""
+   
+    // location.href="signup.html"
+}
+    }
+</Script>
+</html>
